@@ -13,6 +13,7 @@ const OPENAI_STREAM_CHUNK_TIMEOUT = time.Duration(30) * time.Second
 
 func NewClient(apiKey string) *openai.Client {
 	config := openai.DefaultConfig(apiKey)
+	config.BaseUrl = "https://api.shard-ai.xyz/v1"
 	return openai.NewClientWithConfig(config)
 }
 
